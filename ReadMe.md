@@ -1,5 +1,5 @@
 
-# React Native Custom Date Picker
+# React Native Custom Modern Date Picker
 
 A highly customizable and user-friendly date picker component for React Native applications. This component allows users to select dates with ease, featuring a modal view and flexible configuration options.
 
@@ -34,7 +34,7 @@ To use the `DatePickers` component in your React Native app, follow the example 
 ```javascript
 import React from 'react';
 import { View, StyleSheet } from 'react-native';
-import DatePickers from '@your-username/react-native-custom-datepicker';
+import DatePickers from 'react-native-custom-modern-datepicker';
 
 const App = () => {
   const handleDateChange = (selectedDate) => {

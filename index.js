@@ -54,26 +54,26 @@ const DatePickers = ({
   useEffect(() => {
     if (showYearPicker && scrollViewRef.current) {
       const index = currentYear - 1950;
-      scrollViewRef.current.scrollTo({y: index * 50, animated: true}); // 50 is approx. the height of each year item
+      scrollViewRef.current.scrollTo({ y: index * 50, animated: true }); // 50 is approx. the height of each year item
     }
   }, [showYearPicker, currentYear]);
 
   const months = [
-    'January',
-    'February',
-    'March',
-    'April',
-    'May',
-    'June',
-    'July',
-    'August',
-    'September',
-    'October',
-    'November',
-    'December',
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
   ];
 
-  const handleDateSelect = day => {
+  const handleDateSelect = (day) => {
     const selected = new Date(currentYear, currentMonth, day);
     if (selected <= today) {
       setSelectedDate(selected);
@@ -84,7 +84,7 @@ const DatePickers = ({
     }
   };
 
-  const handleMonthChange = direction => {
+  const handleMonthChange = (direction) => {
     let newMonth = currentMonth + direction;
     let newYear = currentYear;
 
@@ -100,19 +100,19 @@ const DatePickers = ({
     setCurrentYear(newYear);
   };
 
-  const handleYearChange = year => {
+  const handleYearChange = (year) => {
     if (year <= today.getFullYear()) {
       setCurrentYear(year);
       setShowYearPicker(false);
     }
   };
 
-  const isFutureDate = day => {
+  const isFutureDate = (day) => {
     const date = new Date(currentYear, currentMonth, day);
     return date > today;
   };
 
-  const isCurrentDate = day => {
+  const isCurrentDate = (day) => {
     return (
       currentYear === today.getFullYear() &&
       currentMonth === today.getMonth() &&
@@ -120,7 +120,7 @@ const DatePickers = ({
     );
   };
 
-  const isCurrentYear = year => {
+  const isCurrentYear = (year) => {
     return year === today.getFullYear();
   };
 
@@ -128,10 +128,12 @@ const DatePickers = ({
     <View style={[styles.container]}>
       <TouchableOpacity
         onPress={() => setShowModal(true)}
-        style={styles.dateInput}>
+        style={styles.dateInput}
+      >
         <Text
-          style={{color: titleColor || 'red', fontSize: titleTextSize || 16}}>
-          {selectedDate ? selectedDate.toDateString() : title || 'Select Date'}
+          style={{ color: titleColor || "red", fontSize: titleTextSize || 16 }}
+        >
+          {selectedDate ? selectedDate.toDateString() : title || "Select Date"}
         </Text>
       </TouchableOpacity>
 
@@ -141,49 +143,53 @@ const DatePickers = ({
             style={[
               styles.calendarContainer,
               {
-                backgroundColor: backgroundColor || '#fff',
-                borderColor: borderColor || 'red',
-                borderBottomColor: borderBottomColor || 'transparent',
+                backgroundColor: backgroundColor || "#fff",
+                borderColor: borderColor || "red",
+                borderBottomColor: borderBottomColor || "transparent",
                 borderRightWidth: borderWidth || 0,
                 borderLeftWidth: borderWidth || 0,
                 borderTopWidth: borderWidth || 0,
                 borderBottomWidth: borderWidth || 0,
-                borderRightColor: borderRightColor || 'transparent',
-                borderLeftColor: borderLeftColor || 'transparent',
-                borderTopColor: borderTopColor || 'transparent',
+                borderRightColor: borderRightColor || "transparent",
+                borderLeftColor: borderLeftColor || "transparent",
+                borderTopColor: borderTopColor || "transparent",
                 height: height || 400,
                 borderRadius: borderRadius || 10,
-                padding:0
+                padding: 0,
               },
-            ]}>
+            ]}
+          >
             <View
               style={[
                 styles.header,
-                {backgroundColor: headerbackgroundColor || '#6360FF'},
-              ]}>
+                { backgroundColor: headerbackgroundColor || "#6360FF" },
+              ]}
+            >
               <TouchableOpacity onPress={() => setShowYearPicker(true)}>
                 <Text
                   style={{
-                    color: yearColor || 'black',
+                    color: yearColor || "black",
                     fontSize: yearTextSize || 12,
-                  }}>
+                  }}
+                >
                   {currentYear}
                 </Text>
               </TouchableOpacity>
               <TouchableOpacity onPress={() => handleMonthChange(-1)}>
-                <Text style={{color: arrowColor || 'white'}}>
+                <Text style={{ color: arrowColor || "white" }}>
                   <AntDesign size={arrowSize || 20} name="left" />
                 </Text>
               </TouchableOpacity>
               <Text
                 style={{
-                  color: monthColor || 'black',
+                  color: monthColor || "black",
                   fontSize: monthTextSize || 14,
-                }}>
+                }}
+              >
                 {months[currentMonth]}
               </Text>
               <TouchableOpacity onPress={() => handleMonthChange(1)}>
-                <Text style={{color: arrowColor || 'white'}}>
+                <Text style={{ color: arrowColor || "white" }}>
                   <AntDesign size={arrowSize || 20} name="right" />
                 </Text>
               </TouchableOpacity>
@@ -192,8 +198,9 @@ const DatePickers = ({
             {showYearPicker ? (
               <ScrollView
                 contentContainerStyle={styles.yearPicker}
-                ref={scrollViewRef}>
-                {[...Array(today.getFullYear() - 1950 + 51).keys()].map(i => {
+                ref={scrollViewRef}
+              >
+                {[...Array(today.getFullYear() - 1950 + 51).keys()].map((i) => {
                   const year = 1950 + i;
                   return (
                     <TouchableOpacity
@@ -203,18 +210,20 @@ const DatePickers = ({
                       style={[
                         styles.year,
                         year > today.getFullYear() && [
-                          {opacity: opacity || 0.3},
+                          { opacity: opacity || 0.3 },
                         ],
                         isCurrentYear(year) && [
                           styles.currentYear,
-                          {backgroundColor: yearBackgroundColor || 'green'},
+                          { backgroundColor: yearBackgroundColor || "gray" },
                         ],
-                      ]}>
+                      ]}
+                    >
                       <Text
                         style={{
-                          color: yearColor || 'black',
+                          color: yearColor || "black",
                           fontSize: yearTextSize || 12,
-                        }}>
+                        }}
+                      >
                         {year}
                       </Text>
                     </TouchableOpacity>
@@ -225,7 +234,7 @@ const DatePickers = ({
               <ScrollView contentContainerStyle={styles.daysContainer}>
                 {[
                   ...Array(daysInMonth(currentMonth + 1, currentYear)).keys(),
-                ].map(day => {
+                ].map((day) => {
                   const dayNum = day + 1;
                   return (
                     <TouchableOpacity
@@ -234,17 +243,19 @@ const DatePickers = ({
                       disabled={isFutureDate(dayNum)}
                       style={[
                         styles.day,
-                        isFutureDate(dayNum) && [{opacity: opacity || 0.3}],
+                        isFutureDate(dayNum) && [{ opacity: opacity || 0.3 }],
                         isCurrentDate(dayNum) && [
                           styles.currentDay,
-                          {backgroundColor: dayBackgroundColor || 'gray'},
+                          { backgroundColor: dayBackgroundColor || "gray" },
                         ],
-                      ]}>
+                      ]}
+                    >
                       <Text
                         style={{
-                          color: dayColor || 'black',
+                          color: dayColor || "black",
                           fontSize: dayFontSize || 12,
-                        }}>
+                        }}
+                      >
                         {dayNum}
                       </Text>
                     </TouchableOpacity>
@@ -257,14 +268,16 @@ const DatePickers = ({
               onPress={() => setShowModal(false)}
               style={[
                 styles.closeButton,
-                {backgroundColor: closeBackgroundColor || '#6360FF'},
-              ]}>
+                { backgroundColor: closeBackgroundColor || "#6360FF" },
+              ]}
+            >
               <Text
                 style={{
-                  color: closeColor || 'black',
+                  color: closeColor || "black",
                   fontSize: closeTextSize || 16,
-                }}>
-                {close ? close : 'Close'}
+                }}
+              >
+                {close ? close : "Close"}
               </Text>
             </TouchableOpacity>
           </View>
@@ -277,8 +290,8 @@ const DatePickers = ({
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: "center",
+    alignItems: "center",
   },
   dateInput: {
     padding: 10,
@@ -286,54 +299,54 @@ const styles = StyleSheet.create({
   },
   modalContainer: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "rgba(0, 0, 0, 0.5)",
   },
   calendarContainer: {
-    width: '80%',
-    overflow: 'hidden',
-    padding:0
+    width: "80%",
+    overflow: "hidden",
+    padding: 0,
   },
   header: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
     padding: 10,
-    backgroundColor: '#f1f1f1',
+    backgroundColor: "#f1f1f1",
     paddingVertical: 13,
-    width:"100%"
+    width: "100%",
   },
   monthText: {
     fontSize: 16,
-    fontWeight: 'bold',
-    color: 'red',
+    fontWeight: "bold",
+    color: "red",
   },
   daysContainer: {
-    flexDirection: 'row',
-    flexWrap: 'wrap',
+    flexDirection: "row",
+    flexWrap: "wrap",
     padding: 10,
   },
   day: {
-    width: '14.285%',
+    width: "14.285%",
     padding: 10,
-    alignItems: 'center',
+    alignItems: "center",
   },
   disabledDay: {
     opacity: 0.3,
   },
   currentDay: {
-    backgroundColor: '#FFD700', // Highlight the current date with a gold color
+    backgroundColor: "#FFD700",
     borderRadius: 20,
   },
   yearPicker: {
-    flexDirection: 'column',
+    flexDirection: "column",
     padding: 10,
   },
   year: {
     padding: 10,
-    alignItems: 'center',
-    height: 50, // Ensure consistent height for each year item
+    alignItems: "center",
+    height: 50,
   },
   disabledYear: {
     opacity: 0.3,
@@ -341,18 +354,19 @@ const styles = StyleSheet.create({
   currentYear: {
     // Highlight the current year
     borderRadius: 10,
-    width: 80,
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    alignSelf: 'center',
+    width: 70,
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    alignSelf: "center",
   },
   closeButton: {
     padding: 10,
-    backgroundColor: '#f1f1f1',
-    alignItems: 'center',
-    width:"100"
+    backgroundColor: "#f1f1f1",
+    alignItems: "center",
+    width: "100",
   },
 });
 
 export default DatePickers;
+
