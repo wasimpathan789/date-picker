@@ -27,7 +27,48 @@ or
 yarn add @your-username/react-native-custom-datepicker
 ```
 
-Props
+## Usage
+
+To use the `DatePickers` component in your React Native app, follow the example below:
+
+```javascript
+import React from 'react';
+import { View, StyleSheet } from 'react-native';
+import DatePickers from '@your-username/react-native-custom-datepicker';
+
+const App = () => {
+  const handleDateChange = (selectedDate) => {
+    console.log('Selected Date:', selectedDate);
+  };
+
+  return (
+    <View style={styles.container}>
+      <DatePickers
+        title="Select Date"
+        onDateChange={handleDateChange}
+        // Add any other props you want to customize
+      />
+    </View>
+  );
+};
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+});
+
+export default App;
+```
+
+
+
+## Props
+
+Following are the props with its decscription
+
 
  | Prop                   | Type       | Default       | Description                                                  |
 | ---------------------- | ---------- | ------------- | ------------------------------------------------------------ |
@@ -55,5 +96,7 @@ Props
 | `borderRadius`         | `number`   | `10`          | Border radius of the date picker modal.                       |
 | `height`               | `number`   | `400`         | Height of the date picker modal.                              |
 #
+
+
 
 
