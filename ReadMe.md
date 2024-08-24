@@ -27,4 +27,33 @@ or
 yarn add @your-username/react-native-custom-datepicker
 ```
 
+Props
+
+ | Prop                   | Type       | Default       | Description                                                  |
+| ---------------------- | ---------- | ------------- | ------------------------------------------------------------ |
+| `title`                | `string`   | "Select Date" | The title displayed on the button before a date is selected.  |
+| `titleColor`           | `string`   | "#333"        | Color of the title text.                                      |
+| `titleTextSize`        | `number`   | `16`          | Font size of the title text.                                  |
+| `onDateChange`         | `function` | `null`        | Callback function that is called when a date is selected. Receives the selected date as an argument. |
+| `backgroundColor`      | `string`   | "#fff"        | Background color of the date picker modal.                    |
+| `headerbackgroundColor`| `string`   | "#f1f1f1"     | Background color of the header containing the month and year. |
+| `borderColor`          | `string`   | "red"         | Border color of the date picker modal.                        |
+| `arrowColor`           | `string`   | "#000"        | Color of the navigation arrows for month selection.           |
+| `arrowSize`            | `number`   | `20`          | Size of the navigation arrows.                                |
+| `yearColor`            | `string`   | "#007AFF"     | Text color for the year picker.                               |
+| `opacity`              | `number`   | `0.3`         | Opacity of disabled years or future dates.                    |
+| `yearBackgroundColor`  | `string`   | "green"       | Background color for the currently selected year.             |
+| `yearTextSize`         | `number`   | `12`          | Font size of the year text.                                   |
+| `dayColor`             | `string`   | "#333"        | Text color for the days.                                      |
+| `dayBackgroundColor`   | `string`   | "gray"        | Background color for the currently selected day.              |
+| `dayFontSize`          | `number`   | `12`          | Font size for the day numbers.                                |
+| `closeBackgroundColor` | `string`   | "#6360FF"     | Background color of the close button.                         |
+| `closeColor`           | `string`   | "#000"        | Text color for the close button.                              |
+| `closeTextSize`        | `number`   | `16`          | Font size for the close button text.                          |
+| `monthColor`           | `string`   | "black"       | Text color for the month name.                                |
+| `monthTextSize`        | `number`   | `14`          | Font size for the month name.                                 |
+| `borderRadius`         | `number`   | `10`          | Border radius of the date picker modal.                       |
+| `height`               | `number`   | `400`         | Height of the date picker modal.                              |
+#
+
 
