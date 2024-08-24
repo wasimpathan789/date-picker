@@ -26,6 +26,9 @@ or
 ```bash
 yarn add @your-username/react-native-custom-datepicker
 ```
+## Demo
+
+![Demo of React Native Custom Date Picker](images/demoGif.gif)
 
 ## Usage
 
