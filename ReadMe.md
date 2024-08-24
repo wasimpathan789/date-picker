@@ -20,15 +20,15 @@ A highly customizable and user-friendly date picker component for React Native a
 To install the component, run:
 
 ```bash
-npm install @your-username/react-native-custom-datepicker
+npm install @react-native-custom-modern-datepicker
 ```
 or
 ```bash
-yarn add @your-username/react-native-custom-datepicker
+yarn add @react-native-custom-modern-datepicker
 ```
 ## Demo
 
-![Demo of React Native Custom Date Picker](images/demoGif.gif)
+![Demo of React Native Custom Date Picker](assets/images/demoGif.gif)
 
 ## Usage
 
