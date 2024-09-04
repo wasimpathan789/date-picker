@@ -1,6 +1,6 @@
 {
   "name": "react-native-custom-modern-datepicker",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "react native modern custom datepicker is fully customised date picker, where we can customize erverthing like, text color , text background, year color, year backaground or many more..For more destails, see decription",
   "main": "index.js",
   "scripts": {
