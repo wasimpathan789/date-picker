@@ -28,7 +28,7 @@ yarn add @react-native-custom-modern-datepicker
 ```
 ## Demo
 
-![Demo of React Native Custom Date Picker](assets/images/demoGif.gif)
+![Demo of React Native Custom Date Picker](https://github.com/wasimpathan789/date-picker/raw/main/assets/images/demoGif.gif)
 
 ## Usage
 
